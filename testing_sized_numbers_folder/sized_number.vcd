@@ -1,0 +1,24 @@
+$date
+	Tue Jul 15 16:00:06 2025
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module sized_number $end
+$var reg 64 ! a [63:0] $end
+$var reg 64 " b [63:0] $end
+$var reg 64 # c [63:0] $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+b0zzzzzzzz01000101 #
+bxzzzzzzzzzzzzzzzzzzzzzzzz11101111 "
+bz0001001000110100xxxxxxxxxxxxxxxx1010101111000001 !
+$end

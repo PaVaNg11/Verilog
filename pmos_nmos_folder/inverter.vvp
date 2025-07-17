@@ -1,0 +1,58 @@
+#! /c/Source/iverilog-install/bin/vvp
+:ivl_version "12.0 (devel)" "(s20150603-1539-g2693dd32b)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision - 12;
+:vpi_module "C:\iverilog\lib\ivl\system.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_sys.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_textio.vpi";
+:vpi_module "C:\iverilog\lib\ivl\v2005_math.vpi";
+:vpi_module "C:\iverilog\lib\ivl\va_math.vpi";
+S_00000135ecfd5c50 .scope module, "inverter_tb" "inverter_tb" 2 22;
+ .timescale -12 -12;
+v00000135ecf1bc10_0 .var "a", 0 0;
+RS_00000135ecfd7068 .resolv tri, L_00000135ecfa3740, L_00000135ecfd2e70;
+v00000135ecf1bcb0_0 .net8 "y", 0 0, RS_00000135ecfd7068;  2 drivers, strength-aware
+S_00000135ecfd5de0 .scope module, "dut" "inverter" 2 28, 2 4 0, S_00000135ecfd5c50;
+ .timescale -12 -12;
+    .port_info 0 /INPUT 1 "a";
+    .port_info 1 /OUTPUT 1 "y";
+L_00000135ecfa3910 .functor BUFT 1, C8<771>, C4<0>, C4<0>, C4<0>;
+L_00000135ecfa3740 .functor PMOS 1, L_00000135ecfa3910, v00000135ecf1bc10_0, C4<0>, C4<0>;
+L_00000135ecf1a160 .functor BUFT 1, C8<770>, C4<0>, C4<0>, C4<0>;
+L_00000135ecfd2e70 .functor NMOS 1, L_00000135ecf1a160, v00000135ecf1bc10_0, C4<0>, C4<0>;
+v00000135ecfa3380_0 .net "a", 0 0, v00000135ecf1bc10_0;  1 drivers
+v00000135ecfa3110_0 .net8 "gnd", 0 0, L_00000135ecf1a160;  1 drivers, strength-aware
+v00000135ecf185a0_0 .net8 "vdd", 0 0, L_00000135ecfa3910;  1 drivers, strength-aware
+v00000135ecfa35a0_0 .net8 "y", 0 0, RS_00000135ecfd7068;  alias, 2 drivers, strength-aware
+    .scope S_00000135ecfd5c50;
+T_0 ;
+    %vpi_call 2 32 "$display", "TIME\011A|Y" {0 0 0};
+    %vpi_call 2 33 "$monitor", "%gns\011%b|%b", $time, v00000135ecf1bc10_0, v00000135ecf1bcb0_0 {0 0 0};
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v00000135ecf1bc10_0, 0, 1;
+    %delay 10, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v00000135ecf1bc10_0, 0, 1;
+    %delay 10, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v00000135ecf1bc10_0, 0, 1;
+    %delay 10, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v00000135ecf1bc10_0, 0, 1;
+    %delay 10, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v00000135ecf1bc10_0, 0, 1;
+    %delay 10, 0;
+    %end;
+    .thread T_0;
+    .scope S_00000135ecfd5c50;
+T_1 ;
+    %vpi_call 2 43 "$dumpfile", "inverter_sim.vcd" {0 0 0};
+    %vpi_call 2 44 "$dumpvars", 32'sb00000000000000000000000000000000, S_00000135ecfd5c50 {0 0 0};
+    %end;
+    .thread T_1;
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "inverter.v";

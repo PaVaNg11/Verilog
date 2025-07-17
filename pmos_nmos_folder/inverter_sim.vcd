@@ -1,0 +1,97 @@
+$date
+	Mon Jul 14 16:40:11 2025
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ns
+$end
+$scope module inverter_tb $end
+$var wire 1 ! y $end
+$var reg 1 " a $end
+$scope module dut $end
+$var wire 1 " a $end
+$var wire 1 # gnd $end
+$var wire 1 $ vdd $end
+$var wire 1 ! y $end
+$upscope $end
+$upscope $end
+$scope module xor_tb $end
+$var wire 1 % y $end
+$var reg 1 & a $end
+$var reg 1 ' b $end
+$scope module dut $end
+$var wire 1 & a $end
+$var wire 1 ( a_bar $end
+$var wire 1 ' b $end
+$var wire 1 ) b_bar $end
+$var wire 1 * gnd $end
+$var wire 1 + t1 $end
+$var wire 1 , t2 $end
+$var wire 1 - t3 $end
+$var wire 1 . vdd $end
+$var wire 1 % y $end
+$scope module inv1 $end
+$var wire 1 & a $end
+$var wire 1 / gnd $end
+$var wire 1 0 vdd $end
+$var wire 1 ( y $end
+$upscope $end
+$scope module inv2 $end
+$var wire 1 ' a $end
+$var wire 1 1 gnd $end
+$var wire 1 2 vdd $end
+$var wire 1 ) y $end
+$upscope $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+12
+01
+10
+0/
+1.
+z-
+z,
+0+
+0*
+1)
+1(
+0'
+0&
+0%
+1$
+0#
+0"
+1!
+$end
+#10
+1%
+1-
+0(
+1&
+0!
+1"
+#20
+0,
+z+
+0)
+1'
+1%
+1-
+1(
+0&
+1!
+0"
+#30
+0%
+0(
+1&
+0!
+1"

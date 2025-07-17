@@ -1,0 +1,67 @@
+#! /c/Source/iverilog-install/bin/vvp
+:ivl_version "12.0 (devel)" "(s20150603-1539-g2693dd32b)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision - 9;
+:vpi_module "C:\iverilog\lib\ivl\system.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_sys.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_textio.vpi";
+:vpi_module "C:\iverilog\lib\ivl\v2005_math.vpi";
+:vpi_module "C:\iverilog\lib\ivl\va_math.vpi";
+S_000001bae59f9fb0 .scope module, "adder_test_tb" "adder_test_tb" 2 6;
+ .timescale -9 -9;
+v000001bae5a12800_0 .var "a", 0 0;
+v000001bae5a128a0_0 .var "b", 0 0;
+v000001bae5a12940_0 .net "c", 0 0, L_000001bae59f8d90;  1 drivers
+v000001bae5a129e0_0 .net "s", 0 0, L_000001bae59f8ac0;  1 drivers
+S_000001bae59fa360 .scope module, "dut" "adder_test" 2 11, 3 1 0, S_000001bae59f9fb0;
+ .timescale -9 -9;
+    .port_info 0 /INPUT 1 "a";
+    .port_info 1 /INPUT 1 "b";
+    .port_info 2 /OUTPUT 1 "s";
+    .port_info 3 /OUTPUT 1 "c";
+L_000001bae59f8ac0 .functor XOR 1, v000001bae5a12800_0, v000001bae5a128a0_0, C4<0>, C4<0>;
+L_000001bae59f8d90 .functor AND 1, v000001bae5a12800_0, v000001bae5a128a0_0, C4<1>, C4<1>;
+v000001bae59fa4f0_0 .net "a", 0 0, v000001bae5a12800_0;  1 drivers
+v000001bae59f8cf0_0 .net "b", 0 0, v000001bae5a128a0_0;  1 drivers
+v000001bae59f8a20_0 .net "c", 0 0, L_000001bae59f8d90;  alias, 1 drivers
+v000001bae5a12760_0 .net "s", 0 0, L_000001bae59f8ac0;  alias, 1 drivers
+    .scope S_000001bae59f9fb0;
+T_0 ;
+    %vpi_call 2 15 "$display", "TIME \011 A B | S C" {0 0 0};
+    %vpi_call 2 16 "$monitor", "%gns\011 %b %b | %b %b", $time, v000001bae5a12800_0, v000001bae5a128a0_0, v000001bae5a129e0_0, v000001bae5a12940_0 {0 0 0};
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v000001bae5a12800_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v000001bae5a128a0_0, 0, 1;
+    %delay 10, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v000001bae5a12800_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v000001bae5a128a0_0, 0, 1;
+    %delay 10, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v000001bae5a12800_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v000001bae5a128a0_0, 0, 1;
+    %delay 10, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v000001bae5a12800_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v000001bae5a128a0_0, 0, 1;
+    %delay 10, 0;
+    %delay 10, 0;
+    %vpi_call 2 30 "$finish" {0 0 0};
+    %end;
+    .thread T_0;
+    .scope S_000001bae59f9fb0;
+T_1 ;
+    %vpi_call 2 37 "$dumpfile", "adder_sim.vcd" {0 0 0};
+    %vpi_call 2 38 "$dumpvars", 32'sb00000000000000000000000000000000, S_000001bae59f9fb0 {0 0 0};
+    %end;
+    .thread T_1;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "adder_test_tb.v";
+    "./adder_test.v";
