@@ -9,7 +9,8 @@ output reg q,qbar
 
 always @(posedge clk or posedge rst ) begin
 
-if(rst)begin
+if(rst)
+begin
     q<=1'b0;
     qbar<=1'b1;
 end
@@ -50,9 +51,6 @@ tff t1 (.clk(clk), .rst(rst), .t_in(t_in), .q(q[0]), .qbar(qbar[0]));
 tff t2 (.clk(q[0]), .rst(rst), .t_in(t_in), .q(q[1]), .qbar(qbar[1]));  
 tff t3 (.clk(q[1]), .rst(rst), .t_in(t_in), .q(q[2]), .qbar(qbar[2]));
 tff t4 (.clk(q[2]), .rst(rst), .t_in(t_in), .q(q[3]), .qbar(qbar[3]));
-
-
-
 
 
 endmodule
